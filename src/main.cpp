@@ -5,8 +5,7 @@
 using namespace std;
 
 int main(){
-    cout << "Hello World\n";
-
+    cout << "Hello World\noptions are \n\"exit\" \n\"setblock\" \n\"setrange\"\n";
     Week myWeek;
     string option, task, day, timeStart, timeEnd;
     while(option != "exit"){
