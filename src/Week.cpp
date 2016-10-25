@@ -187,77 +187,73 @@ void Week::printTimeScale(){
 
 
 int Week::weekDayStringToWeekNum(string weekString){
-  while(1){
-    if(weekString.compare("monday") == 0)return 0;
-    else if(weekString.compare("tuesday") == 0)return 1;
-    else if(weekString.compare("wednesday") == 0)return 2;
-    else if(weekString.compare("thursday") == 0)return 3;
-    else if(weekString.compare("friday") == 0)return 4;
-    else if(weekString.compare("saturday") == 0)return 5;
-    else if(weekString.compare("sunday") == 0)return 6;
-    else{
-      cout << "error, day unknown\n";
-      cout << weekString << endl;
-      // exit(-1);
-    }
+  if(weekString.compare("monday") == 0)return 0;
+  else if(weekString.compare("tuesday") == 0)return 1;
+  else if(weekString.compare("wednesday") == 0)return 2;
+  else if(weekString.compare("thursday") == 0)return 3;
+  else if(weekString.compare("friday") == 0)return 4;
+  else if(weekString.compare("saturday") == 0)return 5;
+  else if(weekString.compare("sunday") == 0)return 6;
+  else{
+    cout << "error, day unknown\n";
+    cout << weekString << endl;
+    exit(-1);
   }
 }
 
 
 int Week::dayTimeToBlockLocation(string timeAmPm){
-  while(1){
-    if(timeAmPm.compare("00:00") == 0)return 0;
-    else if(timeAmPm.compare("00:30") == 0)return 1;
-    else if(timeAmPm.compare("01:00") == 0)return 2;
-    else if(timeAmPm.compare("01:30") == 0)return 3;
-    else if(timeAmPm.compare("02:00") == 0)return 4;
-    else if(timeAmPm.compare("02:30") == 0)return 5;
-    else if(timeAmPm.compare("03:00") == 0)return 6;
-    else if(timeAmPm.compare("03:30") == 0)return 7;
-    else if(timeAmPm.compare("04:00") == 0)return 8;
-    else if(timeAmPm.compare("04:30") == 0)return 9;
-    else if(timeAmPm.compare("05:00") == 0)return 10;
-    else if(timeAmPm.compare("05:30") == 0)return 11;
-    else if(timeAmPm.compare("06:00") == 0)return 12;
-    else if(timeAmPm.compare("06:30") == 0)return 13;
-    else if(timeAmPm.compare("07:00") == 0)return 14;
-    else if(timeAmPm.compare("07:30") == 0)return 15;
-    else if(timeAmPm.compare("08:00") == 0)return 16;
-    else if(timeAmPm.compare("08:30") == 0)return 17;
-    else if(timeAmPm.compare("09:00") == 0)return 18;
-    else if(timeAmPm.compare("09:30") == 0)return 19;
-    else if(timeAmPm.compare("10:00") == 0)return 20;
-    else if(timeAmPm.compare("10:30") == 0)return 21;
-    else if(timeAmPm.compare("11:00") == 0)return 22;
-    else if(timeAmPm.compare("11:30") == 0)return 23;
-    else if(timeAmPm.compare("12:00") == 0)return 24;
-    else if(timeAmPm.compare("12:30") == 0)return 25;
-    else if(timeAmPm.compare("13:00") == 0)return 26;
-    else if(timeAmPm.compare("13:30") == 0)return 27;
-    else if(timeAmPm.compare("14:00") == 0)return 28;
-    else if(timeAmPm.compare("14:30") == 0)return 29;
-    else if(timeAmPm.compare("15:00") == 0)return 30;
-    else if(timeAmPm.compare("15:30") == 0)return 31;
-    else if(timeAmPm.compare("16:00") == 0)return 32;
-    else if(timeAmPm.compare("16:30") == 0)return 33;
-    else if(timeAmPm.compare("17:00") == 0)return 34;
-    else if(timeAmPm.compare("17:30") == 0)return 35;
-    else if(timeAmPm.compare("18:00") == 0)return 36;
-    else if(timeAmPm.compare("18:30") == 0)return 37;
-    else if(timeAmPm.compare("19:00") == 0)return 38;
-    else if(timeAmPm.compare("19:30") == 0)return 39;
-    else if(timeAmPm.compare("20:00") == 0)return 40;
-    else if(timeAmPm.compare("20:30") == 0)return 41;
-    else if(timeAmPm.compare("21:00") == 0)return 42;
-    else if(timeAmPm.compare("21:30") == 0)return 43;
-    else if(timeAmPm.compare("22:00") == 0)return 44;
-    else if(timeAmPm.compare("22:30") == 0)return 45;
-    else if(timeAmPm.compare("23:00") == 0)return 46;
-    else if(timeAmPm.compare("23:30") == 0)return 47;
-    else {
-      cout << "error, time unknown\n";
-      cout << timeAmPm << endl;
-      // exit(-1);
-    }
+  if(timeAmPm.compare("00:00") == 0)return 0;
+  else if(timeAmPm.compare("00:30") == 0)return 1;
+  else if(timeAmPm.compare("01:00") == 0)return 2;
+  else if(timeAmPm.compare("01:30") == 0)return 3;
+  else if(timeAmPm.compare("02:00") == 0)return 4;
+  else if(timeAmPm.compare("02:30") == 0)return 5;
+  else if(timeAmPm.compare("03:00") == 0)return 6;
+  else if(timeAmPm.compare("03:30") == 0)return 7;
+  else if(timeAmPm.compare("04:00") == 0)return 8;
+  else if(timeAmPm.compare("04:30") == 0)return 9;
+  else if(timeAmPm.compare("05:00") == 0)return 10;
+  else if(timeAmPm.compare("05:30") == 0)return 11;
+  else if(timeAmPm.compare("06:00") == 0)return 12;
+  else if(timeAmPm.compare("06:30") == 0)return 13;
+  else if(timeAmPm.compare("07:00") == 0)return 14;
+  else if(timeAmPm.compare("07:30") == 0)return 15;
+  else if(timeAmPm.compare("08:00") == 0)return 16;
+  else if(timeAmPm.compare("08:30") == 0)return 17;
+  else if(timeAmPm.compare("09:00") == 0)return 18;
+  else if(timeAmPm.compare("09:30") == 0)return 19;
+  else if(timeAmPm.compare("10:00") == 0)return 20;
+  else if(timeAmPm.compare("10:30") == 0)return 21;
+  else if(timeAmPm.compare("11:00") == 0)return 22;
+  else if(timeAmPm.compare("11:30") == 0)return 23;
+  else if(timeAmPm.compare("12:00") == 0)return 24;
+  else if(timeAmPm.compare("12:30") == 0)return 25;
+  else if(timeAmPm.compare("13:00") == 0)return 26;
+  else if(timeAmPm.compare("13:30") == 0)return 27;
+  else if(timeAmPm.compare("14:00") == 0)return 28;
+  else if(timeAmPm.compare("14:30") == 0)return 29;
+  else if(timeAmPm.compare("15:00") == 0)return 30;
+  else if(timeAmPm.compare("15:30") == 0)return 31;
+  else if(timeAmPm.compare("16:00") == 0)return 32;
+  else if(timeAmPm.compare("16:30") == 0)return 33;
+  else if(timeAmPm.compare("17:00") == 0)return 34;
+  else if(timeAmPm.compare("17:30") == 0)return 35;
+  else if(timeAmPm.compare("18:00") == 0)return 36;
+  else if(timeAmPm.compare("18:30") == 0)return 37;
+  else if(timeAmPm.compare("19:00") == 0)return 38;
+  else if(timeAmPm.compare("19:30") == 0)return 39;
+  else if(timeAmPm.compare("20:00") == 0)return 40;
+  else if(timeAmPm.compare("20:30") == 0)return 41;
+  else if(timeAmPm.compare("21:00") == 0)return 42;
+  else if(timeAmPm.compare("21:30") == 0)return 43;
+  else if(timeAmPm.compare("22:00") == 0)return 44;
+  else if(timeAmPm.compare("22:30") == 0)return 45;
+  else if(timeAmPm.compare("23:00") == 0)return 46;
+  else if(timeAmPm.compare("23:30") == 0)return 47;
+  else {
+    cout << "error, time unknown\n";
+    cout << timeAmPm << endl;
+    exit(-1);
   }
 }
