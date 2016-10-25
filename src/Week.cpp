@@ -15,7 +15,7 @@ Week::Week(){     //ctor
   constrDayNames();
   emptyWeek();
 
-  printWeek();
+  // printWeek();
 }
 
 
@@ -57,6 +57,15 @@ void Week::setdayBlockPointer(int newLoc){
 
 void Week::setWeekBlock(string taskName, string day, string block){
   weekInBlocks[weekDayStringToWeekNum(day)][dayTimeToBlockLocation(block)] = taskName;
+}
+
+
+void Week::setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd){
+  int blockNumStart = dayTimeToBlockLocation(blockStart);
+  int blockNumEnd = dayTimeToBlockLocation(blockEnd);
+  for(int blockCounter = blockNumStart; blockCounter < blockNumEnd; blockCounter++){
+    weekInBlocks[weekDayStringToWeekNum(day)][blockCounter] = taskName;
+  }
 }
 
 
@@ -178,8 +187,6 @@ void Week::printTimeScale(){
 
 
 int Week::weekDayStringToWeekNum(string weekString){
-  cout << "comparing dayOf the week\n" << weekString.compare("monday") << endl;
-  // return 2;
   if(weekString.compare("monday") == 0)return 0;
   else if(weekString.compare("tuesday") == 0)return 1;
   else if(weekString.compare("wednesday") == 0)return 2;
@@ -196,8 +203,6 @@ int Week::weekDayStringToWeekNum(string weekString){
 
 
 int Week::dayTimeToBlockLocation(string timeAmPm){
-  cout << "compare time stuff" << timeAmPm.compare("12:00") << endl;
-  // return 25;
   if(timeAmPm.compare("00:00") == 0)return 0;
   else if(timeAmPm.compare("00:30") == 0)return 1;
   else if(timeAmPm.compare("01:00") == 0)return 2;

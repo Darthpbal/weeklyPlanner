@@ -23,7 +23,7 @@ class Week
     void setdayBlockPointer(int newLoc);
     void emptyWeek();
 
-    void setWeekBlockRange(string taskName, string blockStart, string blockSize);
+    void setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd);
     void setWeekBlock(string taskName, string day, string block);
     string getWeekBlock(int day, int block);
 
