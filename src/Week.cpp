@@ -36,6 +36,11 @@ void Week::printWeek(){
 }
 
 
+void Week::loadWeek(){
+  ifstream weekFile("myWeek.txt");
+}
+
+
 int Week::getweekPointer(){
   return weekPointer;
 }

@@ -50,6 +50,7 @@ class Week
     void constrTimeScale();
     void constrDayNames();
 
+    void loadWeek();
 
     // int timeRangeTodayBlockrangeSize(string endTime, string startTime);
 
