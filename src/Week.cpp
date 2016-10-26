@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include "Week.hpp"
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -66,6 +67,36 @@ void Week::setWeekBlockRange(string taskName, string day, string blockStart, str
   for(int blockCounter = blockNumStart; blockCounter < blockNumEnd; blockCounter++){
     weekInBlocks[weekDayStringToWeekNum(day)][blockCounter] = taskName;
   }
+}
+
+
+void Week::saveWeek(){
+  ofstream weekFile("myWeek.txt");
+  for (int i = 0; i < (dayNum + 1); i++) {
+    weekFile << "===============";
+  }
+  weekFile << endl;
+  weekFile << setw(15) << left << timeScale[0];
+  for (int dayCount = 0; dayCount < dayNum; dayCount++) {
+    weekFile << setw(15) << left << dayNames[dayCount];
+  }
+  weekFile << endl;
+  for (int i = 0; i < (dayNum + 1); i++) {
+    weekFile << "===============";
+  }
+  weekFile << endl;
+  for (int dayBlockCount = 0; dayBlockCount < dayBlockNum; dayBlockCount++) {
+    weekFile << setw(15) << left << timeScale[dayBlockCount + 1];
+    for (int dayCount = 0; dayCount < dayNum; dayCount++) {
+      weekFile << setw(15) << left << weekInBlocks[dayCount][dayBlockCount];
+    }
+    weekFile << endl;
+  }
+  for (int i = 0; i < (dayNum + 1); i++) {
+    weekFile << "===============";
+  }
+  weekFile << endl;
+  weekFile << endl;
 }
 
 
