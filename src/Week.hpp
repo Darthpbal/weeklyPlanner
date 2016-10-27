@@ -23,6 +23,7 @@ class Week
 
     void clearWeekBlock(string day, string block);
     void clearWeekDay(string weekday);
+    void clearRange(string day, string blockStart, string blockEnd);
 
     string getWeekBlock(int day, int block);
 

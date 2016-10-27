@@ -66,17 +66,6 @@ void Week::setWeekBlock(string taskName, string day, string block){
 }
 
 
-
-
-void Week::setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd){
-  int blockNumStart = dayTimeToBlockLocation(blockStart);
-  int blockNumEnd = dayTimeToBlockLocation(blockEnd);
-  for(int blockCounter = blockNumStart; blockCounter < blockNumEnd; blockCounter++){
-    weekInBlocks[weekDayStringToWeekNum(day)][blockCounter] = taskName;
-  }
-}
-
-
 void Week::exp(){
   ofstream weekFile("myWeek.txt");
   for (int i = 0; i < (dayNum + 1); i++) {
@@ -209,6 +198,24 @@ void Week::printWeekDays(){
 
 void Week::clearWeekDay(string day){
   for(int blockCounter = 0; blockCounter < dayBlockNum; blockCounter++){
+    weekInBlocks[weekDayStringToWeekNum(day)][blockCounter].clear();
+  }
+}
+
+
+void Week::setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd){
+  int blockNumStart = dayTimeToBlockLocation(blockStart);
+  int blockNumEnd = dayTimeToBlockLocation(blockEnd);
+  for(int blockCounter = blockNumStart; blockCounter < blockNumEnd; blockCounter++){
+    weekInBlocks[weekDayStringToWeekNum(day)][blockCounter] = taskName;
+  }
+}
+
+
+void Week::clearRange(string day, string blockStart, string blockEnd){
+  int blockNumStart = dayTimeToBlockLocation(blockStart);
+  int blockNumEnd = dayTimeToBlockLocation(blockEnd);
+  for(int blockCounter = blockNumStart; blockCounter < blockNumEnd; blockCounter++){
     weekInBlocks[weekDayStringToWeekNum(day)][blockCounter].clear();
   }
 }

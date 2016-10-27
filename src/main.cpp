@@ -61,6 +61,16 @@ int main(){
         myWeek.clearWeekDay(day);
         continue;
       }
+      else if(option == "clearrange"){
+        cout << "what day?\n";
+        cin >> day;
+        cout << "start time?\n";
+        cin >> timeStart;
+        cout << "end time?\n";
+        cin >> timeEnd;
+        myWeek.clearRange(day, timeStart, timeEnd);
+        continue;
+      }
 
 
       cout << "What is the task to do?\n";
