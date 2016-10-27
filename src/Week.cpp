@@ -66,9 +66,6 @@ void Week::setWeekBlock(string taskName, string day, string block){
 }
 
 
-void Week::clearWeekBlock(string day, string block){
-  weekInBlocks[weekDayStringToWeekNum(day)][dayTimeToBlockLocation(block)].clear();
-}
 
 
 void Week::setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd){
@@ -210,11 +207,18 @@ void Week::printWeekDays(){
 }
 
 
+
+
+
+void Week::clearWeekBlock(string day, string block){
+  weekInBlocks[weekDayStringToWeekNum(day)][dayTimeToBlockLocation(block)].clear();
+}
+
+
 void Week::emptyWeek(){
   for (int day = 0; day < dayNum; day++) {
     for (int blockNum = 0; blockNum < dayBlockNum; blockNum++) {
-      weekInBlocks[day][blockNum] = " ";
-      // setWeekBlock("null", day, blockNum);
+      weekInBlocks[day][blockNum].clear();
     }
   }
 }
