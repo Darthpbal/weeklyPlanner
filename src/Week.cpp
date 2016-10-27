@@ -207,7 +207,11 @@ void Week::printWeekDays(){
 }
 
 
-
+void Week::clearWeekDay(string day){
+  for(int blockCounter = 0; blockCounter < dayBlockNum; blockCounter++){
+    weekInBlocks[weekDayStringToWeekNum(day)][blockCounter].clear();
+  }
+}
 
 
 void Week::clearWeekBlock(string day, string block){

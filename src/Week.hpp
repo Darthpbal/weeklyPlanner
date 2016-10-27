@@ -22,6 +22,7 @@ class Week
     void setWeekBlock(string taskName, string day, string block);
 
     void clearWeekBlock(string day, string block);
+    void clearWeekDay(string weekday);
 
     string getWeekBlock(int day, int block);
 

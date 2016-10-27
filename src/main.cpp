@@ -58,7 +58,7 @@ int main(){
       else if(option == "clearday"){
         cout << "what day?\n";
         cin >> day;
-        // myWeek.clearWeekDay();
+        myWeek.clearWeekDay(day);
         continue;
       }
 
