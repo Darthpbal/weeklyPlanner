@@ -1,5 +1,6 @@
 /*
 todo
+rename the save function to "export" and rewrite the save function such that it saves the task elements in an easy to load format. This helps the design of the load function, and should make the save function simpler to write since it wouldn't have to care about formatting since the export function would be the one used for human understanding.
 add Textfile based load functions (may be relatively harder feature than others if a week has significant number of empty cells)
 add ability for the week frame size to scale based on screen size. Currently only sized for my GIR laptop. (this may mean that there might have to be a new scheme for storing/displaying the weekblocks. Could get complex!)
 add A function for counting how many cells are a certain task in a day for returning number of hours spent on the task that day. This can be then expanded for every day of the week in total.
