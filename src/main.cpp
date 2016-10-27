@@ -36,8 +36,8 @@ int main(){
         myWeek.emptyWeek();
         continue;
       }
-      else if(option == "save"){
-        myWeek.saveWeek();
+      else if(option == "export"){
+        myWeek.exp();
         continue;
       }
 

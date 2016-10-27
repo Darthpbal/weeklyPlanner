@@ -75,7 +75,7 @@ void Week::setWeekBlockRange(string taskName, string day, string blockStart, str
 }
 
 
-void Week::saveWeek(){
+void Week::exp(){
   ofstream weekFile("myWeek.txt");
   for (int i = 0; i < (dayNum + 1); i++) {
     weekFile << "===============";

@@ -20,7 +20,7 @@ class Week
     void setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd);
     void setWeekBlock(string taskName, string day, string block);
     string getWeekBlock(int day, int block);
-    void saveWeek();
+    void exp();
 
     //converting human to computer
     int weekDayStringToWeekNum(string weekString);
