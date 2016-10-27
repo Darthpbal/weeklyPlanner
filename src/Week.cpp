@@ -10,8 +10,8 @@ using namespace std;
 
 
 Week::Week(){     //ctor
-  setweekPointer(0);
-  setdayBlockPointer(0);
+  // setweekPointer(0);
+  // setdayBlockPointer(0);
   constrTimeScale();
   constrDayNames();
   emptyWeek();
@@ -41,28 +41,33 @@ void Week::loadWeek(){
 }
 
 
-int Week::getweekPointer(){
-  return weekPointer;
-}
-
-
-void Week::setweekPointer(int newLoc){
-  weekPointer = newLoc;
-}
-
-
-int Week::getdayBlockPointer(){
-  return dayBlockPointer;
-}
-
-
-void Week::setdayBlockPointer(int newLoc){
-  dayBlockPointer = newLoc;
-}
+// int Week::getweekPointer(){
+//   return weekPointer;
+// }
+//
+//
+// void Week::setweekPointer(int newLoc){
+//   weekPointer = newLoc;
+// }
+//
+//
+// int Week::getdayBlockPointer(){
+//   return dayBlockPointer;
+// }
+//
+//
+// void Week::setdayBlockPointer(int newLoc){
+//   dayBlockPointer = newLoc;
+// }
 
 
 void Week::setWeekBlock(string taskName, string day, string block){
   weekInBlocks[weekDayStringToWeekNum(day)][dayTimeToBlockLocation(block)] = taskName;
+}
+
+
+void Week::clearWeekBlock(string day, string block){
+  weekInBlocks[weekDayStringToWeekNum(day)][dayTimeToBlockLocation(block)].clear();
 }
 
 

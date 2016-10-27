@@ -10,16 +10,21 @@ class Week
     Week();
     void printWeek();
 
-    int getweekPointer();
-    void setweekPointer(int newLoc);
+    // int getweekPointer();
+    // void setweekPointer(int newLoc);
+    //
+    // int getdayBlockPointer();
+    // void setdayBlockPointer(int newLoc);
 
-    int getdayBlockPointer();
-    void setdayBlockPointer(int newLoc);
     void emptyWeek();
 
     void setWeekBlockRange(string taskName, string day, string blockStart, string blockEnd);
     void setWeekBlock(string taskName, string day, string block);
+
+    void clearWeekBlock(string day, string block);
+
     string getWeekBlock(int day, int block);
+
     void exp();
 
     //converting human to computer
@@ -45,8 +50,8 @@ class Week
 
 
     //utility
-    int weekPointer;
-    int dayBlockPointer;
+    // int weekPointer;
+    // int dayBlockPointer;
     void constrTimeScale();
     void constrDayNames();
 
