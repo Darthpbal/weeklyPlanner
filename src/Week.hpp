@@ -33,6 +33,10 @@ class Week
     int weekDayStringToWeekNum(string weekString);
     int dayTimeToBlockLocation(string timeAmPm);
 
+
+    void load();
+    void save();
+
   private:
     //dataset
     static const int dayNum = 7;
@@ -56,8 +60,6 @@ class Week
     // int dayBlockPointer;
     void constrTimeScale();
     void constrDayNames();
-
-    void loadWeek();
 
     // int timeRangeTodayBlockrangeSize(string endTime, string startTime);
 

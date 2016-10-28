@@ -36,9 +36,28 @@ void Week::printWeek(){
 }
 
 
-void Week::loadWeek(){
+void Week::load(){
   ifstream weekFile("myWeek.txt");
 }
+
+void Week::save(){
+  ofstream saveFile("saveFile.txt");
+  if(!saveFile){
+    cout << "error opening save file, terminating\n\n";
+    exit(-1);
+  }
+  for (int dayCount = 0; dayCount < dayNum; dayCount++) {
+    for (int blockCounter = 0; blockCounter < dayBlockNum; blockCounter++) {
+      saveFile << weekInBlocks[dayCount][blockCounter];
+      if((blockCounter + 1) != dayBlockNum) saveFile << ',';
+      // ((blockCounter + 1) == dayBlockNum)? saveFile << ',': saveFile << '\n';
+    }
+    saveFile << endl;
+  }
+  saveFile.close();
+}
+
+
 
 
 // int Week::getweekPointer(){
@@ -68,6 +87,10 @@ void Week::setWeekBlock(string taskName, string day, string block){
 
 void Week::exp(){
   ofstream weekFile("myWeek.txt");
+  if(!weekFile){
+    cout << "unable to open file for exporting, terminating...\n\n";
+    exit(-1);
+  }
   for (int i = 0; i < (dayNum + 1); i++) {
     weekFile << "===============";
   }
@@ -228,8 +251,8 @@ void Week::clearWeekBlock(string day, string block){
 
 void Week::emptyWeek(){
   for (int day = 0; day < dayNum; day++) {
-    for (int blockNum = 0; blockNum < dayBlockNum; blockNum++) {
-      weekInBlocks[day][blockNum].clear();
+    for (int blockCounter = 0; blockCounter < dayBlockNum; blockCounter++) {
+      weekInBlocks[day][blockCounter].clear();
     }
   }
 }
