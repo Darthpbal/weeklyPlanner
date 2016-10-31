@@ -34,7 +34,7 @@ class Week
     int dayTimeToBlockLocation(string timeAmPm);
 
 
-    void load();
+    bool load();
     void save();
 
   private:

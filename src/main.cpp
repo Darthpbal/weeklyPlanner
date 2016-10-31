@@ -1,7 +1,11 @@
 /*
 todo
 
+fix loading function. If there are large numbers of empty cells, commas are interpretted as a task
+
 add a setter function for one task for multiple days and a range
+
+
 add ability for the week frame size to scale based on screen size. Currently only sized for my GIR laptop. (this may mean that there might have to be a new scheme for storing/displaying the weekblocks. Could get complex!)
 
 add A function for counting how many cells are a certain task in a day for returning number of hours spent on the task that day. This can be then expanded for every day of the week in total.
