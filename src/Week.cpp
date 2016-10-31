@@ -37,7 +37,52 @@ void Week::printWeek(){
 
 
 void Week::load(){
-  ifstream weekFile("myWeek.txt");
+  ifstream weekFile("saveFile.txt");
+  if(!weekFile){
+    cout << "unable to open file for loading... terminating\n";
+    exit(-1);
+  }
+
+  int dayCount = 0;
+  while(!weekFile.eof()){
+    string line, word;
+    int blockCount = 0;
+    cout << dayCount << "," << blockCount << ",";
+    getline(weekFile, line);
+    for(int i = 0; i < line.size(); i++){
+      if(line[i] == ','){
+        i++;
+        weekInBlocks[dayCount][blockCount] = word;
+        blockCount++;
+        word.clear();
+
+        cout << endl;
+        cout << dayCount << "," << blockCount << ",";
+      }
+      word += line[i];
+      cout << line[i];
+    }
+    weekInBlocks[dayCount][blockCount] = word;
+    cout << endl << "newday" << endl;
+    dayCount++;
+  }
+
+  /*
+  int countOptions(ifstream& indexFile){
+    int i = 0;
+    while(!indexFile.eof()){
+        string line;
+        getline(indexFile, line);
+        if(line.size()){
+            i++;
+        }
+    }
+    return i;
+  }
+
+  */
+
+  weekFile.close();
 }
 
 void Week::save(){
