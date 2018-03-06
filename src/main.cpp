@@ -1,6 +1,8 @@
 /*
 todo
 
+add feature to read a list of repeating obligations with something like say class credits and add a way to have the system check how much say homeowrk credits there are to check to see if the current week configuration satisfies all weekly subject hours requirements.
+
 fix loading function. If there are large numbers of empty cells, commas are interpretted as a task
 
 add a setter function for one task for multiple days and a range

@@ -8,3 +8,7 @@ compile:clean
 clean:
 	rm -f program
 	clear
+
+cleanSave:
+	rm -f saveFile.txt
+	clear
